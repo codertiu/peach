@@ -33,6 +33,9 @@ class Router
         return false;
     }
 
+    /**
+     *  Controller/action-larni izlab ishga tushiruvchi qism
+     */
     public function run()
     {
         if ($this->match()) {
@@ -43,13 +46,13 @@ class Router
                     $controller = new $path($this->params);
                     $controller->$action();
                 } else {
-                    echo 'Bunday faoliyat topilmadi: '.$action;
+                    View::errorCode(404);
                 }
             } else {
-                echo 'Bunday controller topilmadi: '.$path;
+                View::errorCode(404);
             }
         } else {
-            echo 'Yo`nalish topilmadi';
+            View::errorCode(404);
         }
     }
 }
