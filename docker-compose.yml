@@ -1,0 +1,41 @@
+version: '3.2'
+
+services:
+
+  backend:
+    container_name: peach
+    build: backend
+    ports:
+      - 8282:80
+    volumes:
+      # Re-use local composer cache via host-volume
+      - ~/.composer-docker/cache:/root/.composer/cache:delegated
+      # Mount source-code for development
+      - ./:/app
+
+  #  mysql:
+  #    image: mysql:5.7
+  #    environment:
+  #      - MYSQL_ROOT_PASSWORD=secret
+  #      - MYSQL_DATABASE=basename
+  #      - MYSQL_USER=username
+  #      - MYSQL_PASSWORD=password
+
+  pgsql:
+    container_name: peach_db
+    image: postgres:9.5
+    environment:
+      - POSTGRES_DB=peach_db
+      - POSTGRES_USER=peach
+      - POSTGRES_PASSWORD=secret
+    ports:
+      - "5432:5432"
+  pgadmin:
+    image: dpage/pgadmin4
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@app.net
+      PGADMIN_DEFAULT_PASSWORD: admin
+    volumes:
+      - ./pgadmin:/var/lib/pgadmin
