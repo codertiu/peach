@@ -1,5 +1,8 @@
 <?php
-/* PDO uchun massivdagi ishlatiladigan baza nomi */
+/**
+ * PDO uchun massivdagi ishlatiladigan baza nomini ko'rsating
+ * postgres va sqlite sinab ko'rilgan!
+ **/
 
 define('SHAFTOLI_DB', 'postgresql');
 

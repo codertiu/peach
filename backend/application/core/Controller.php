@@ -8,7 +8,7 @@ use application\core\View;
  * Class Controller
  * @package application\core
  * !!! bu controllerdan meros olinganda controllerning NomiController -> views/nomi papka bo'ladi
- * va indexAction metodi -> nomi/index.php faylini ko'radi!
+ * va indexAction metodidagi "index" -> nomi/index.php faylini ko'radi!
  */
 abstract class Controller
 {

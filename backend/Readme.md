@@ -1,7 +1,7 @@
 ## Shaftoli framework (Beta)
 <br>
 
-#### Bu framework nima amallar qila oladi:
+#### Bu framework qanday qobiliyatlarga ega:
 
 * Oddiy(basic) MVC strukturasida tuzilgan framework hisoblanadi.
 * Router-lar yaratish mumkin.

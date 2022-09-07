@@ -9,6 +9,6 @@ class AccountController extends Controller
 
     public function loginAction() {
         // $this->view->redirect('/');
-        echo 'Kirish sahaifasi';
+        $this->view->render('Login');
     }
 }
